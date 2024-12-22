@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Resume View</div>
+  <div>About Me View</div>
 </template>
 
 <style lang="sass" scoped></style>

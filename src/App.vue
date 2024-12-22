@@ -1,13 +1,14 @@
 <script setup lang="ts">
-// import About from "@views/About.vue";
-// import Home from "@views/Home.vue";
-// import Contact from "@views/Contact.vue";
-// import Projects from "@views/Projects.vue";
-// import Resume from "@views/Resume.vue";
+  // import About from "@views/About.vue";
+  // import Home from "@views/Home.vue";
+  // import Contact from "@views/Contact.vue";
+  // import Projects from "@views/Projects.vue";
+  // import Resume from "@views/Resume.vue";
+  import NavBar from '@/components/NavBar.vue';
 </script>
 
 <template>
-  <div>App.Vue main div</div>
+  <NavBar />
 </template>
 
 <style lang="scss" scoped></style>
