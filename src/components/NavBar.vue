@@ -1,20 +1,94 @@
 <script setup lang="ts">
-  import { RouterLink, RouterView } from 'vue-router';
+  import { routes } from '@/router';
+  import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <header>
-    <div class="navbar">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/resume">Resume</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
-      </nav>
+  <div class="navbar-container">
+    <div class="side-nav">
+      <div class="routes-container">
+        <RouterLink v-for="route in routes" :to="{ name: route.name }">
+          <i :class="`fa ${route.meta.icon}`"></i>
+        </RouterLink>
+      </div>
     </div>
-  </header>
-  <RouterView />
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_animations.scss' as animations;
+
+  .navbar-container {
+    position: relative;
+
+    .side-nav {
+      position: fixed;
+      width: 50px;
+      left: 0;
+      top: 0;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      background-color: colors.$slate-grey;
+      display: grid;
+      grid-template-rows: 50px auto 100px;
+      justify-content: center;
+
+      a {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 3px;
+        transition: all 0.3s;
+        text-decoration: none;
+        color: colors.$platinum;
+        font-size: 2rem;
+
+        &:hover,
+        &.router-link-active {
+          background-color: colors.$platinum;
+          color: colors.$dark-grey-purple;
+        }
+      }
+
+      .routes-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+        i {
+          color: colors.$dark-grey-purple;
+        }
+      }
+    }
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.33);
+    }
+    80%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-dot {
+    0% {
+      transform: scale(0.8);
+    }
+    50% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0.8);
+    }
+  }
+</style>

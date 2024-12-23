@@ -1,14 +1,25 @@
 <script setup lang="ts">
-  // import About from "@views/About.vue";
-  // import Home from "@views/Home.vue";
-  // import Contact from "@views/Contact.vue";
-  // import Projects from "@views/Projects.vue";
-  // import Resume from "@views/Resume.vue";
   import NavBar from '@/components/NavBar.vue';
+  import Header from './components/ui/Header.vue';
 </script>
 
 <template>
-  <NavBar />
+  <div id="app" class="app">
+    <div class="app-body">
+      <NavBar />
+      <div class="content">
+        <Header />
+        <RouterView class="view" />
+      </div>
+    </div>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+  .app-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+</style>

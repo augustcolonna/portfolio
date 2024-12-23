@@ -1,0 +1,27 @@
+@use '_colors.scss' as colors;
+
+.btn-light {
+  background-color: colors.$platinum;
+  border-radius: 5px;
+  padding: 5px 7px;
+  border: solid 1px colors.$slate-grey;
+  color: colors.$celestial-blue;
+
+  &:hover {
+    background-color: colors.$slate-grey;
+    color: colors.$platinum;
+  }
+}
+
+.btn-dark {
+  background-color: colors.$dark-grey-purple;
+  border-radius: 5px;
+  padding: 5px 7px;
+  border: solid 1px colors.$slate-grey;
+  color: colors.$platinum;
+
+  &:hover {
+    background-color: colors.$slate-grey;
+    color: colors.$platinum;
+  }
+}
