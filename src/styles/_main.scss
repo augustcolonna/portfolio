@@ -1,5 +1,30 @@
 @use '_colors.scss' as colors;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: colors.$dark-grey-purple;
+  background-color: colors.$dark-purple;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .btn-light {
   background-color: colors.$platinum;
   border-radius: 5px;

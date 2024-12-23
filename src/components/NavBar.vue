@@ -17,7 +17,6 @@
 
 <style lang="scss" scoped>
   @use '@/styles/_colors.scss' as colors;
-  @use '@/styles/_animations.scss' as animations;
 
   .navbar-container {
     position: relative;
@@ -30,10 +29,10 @@
       padding: 0;
       margin: 0;
       height: 100vh;
-      background-color: colors.$slate-grey;
-      display: grid;
-      grid-template-rows: 50px auto 100px;
+      background-color: colors.$dark-purple;
+      display: flex;
       justify-content: center;
+      align-items: center;
 
       a {
         width: 40px;
@@ -57,7 +56,6 @@
       .routes-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
         margin: 0;
         padding: 0;
