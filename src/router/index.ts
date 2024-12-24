@@ -21,7 +21,7 @@ export const routes = [
     name: 'about',
     component: About,
     meta: {
-      headline: 'About August',
+      headline: 'About',
       icon: 'fa-solid fa-person',
     },
   },
@@ -30,7 +30,7 @@ export const routes = [
     name: 'contact',
     component: Contact,
     meta: {
-      headline: 'Contact August',
+      headline: 'Contact',
       icon: 'fa-solid fa-address-card',
     },
   },
@@ -39,7 +39,7 @@ export const routes = [
     name: 'resume',
     component: Resume,
     meta: {
-      headline: "August's Resume",
+      headline: 'Experience',
       icon: 'fa-solid fa-timeline',
     },
   },
@@ -48,7 +48,7 @@ export const routes = [
     name: 'projects',
     component: Projects,
     meta: {
-      headline: "August's Projects",
+      headline: 'Projects',
       icon: 'fa-solid fa-rocket',
     },
   },

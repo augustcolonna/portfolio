@@ -1,7 +1,17 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Contact View</div>
+  <div class="contact-container">Contact Me View</div>
 </template>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped>
+  @use '@/styles/_colors.scss' as colors;
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    color: colors.$platinum;
+  }
+</style>

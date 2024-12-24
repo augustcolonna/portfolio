@@ -17,6 +17,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     server: {
+      host: 'localhost',
       port: 5000,
     },
   };
