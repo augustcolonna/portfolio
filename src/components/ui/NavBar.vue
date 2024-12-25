@@ -40,92 +40,81 @@
       justify-content: center;
       align-items: center;
 
-      a {
-        text-decoration: none;
-        color: inherit;
-        margin: 10px 0;
-
-        &.router-link-active {
-          color: colors.$platinum;
-        }
-      }
-
       .routes-container {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        background-color: colors.$slate-grey;
-        border-radius: 15px;
-        gap: 30px;
-        margin: 0;
-        padding: 0;
-        height: 40%;
-        width: 80px;
-        box-shadow: 0 0 5px 0 colors.$slate-grey;
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          margin: 10px 0;
+
+          &.router-link-active {
+            background-color: colors.$dark-purple;
+            color: colors.$platinum;
+            border: solid 1px colors.$platinum;
+            transition: all 0.2s;
+          }
+        }
 
         .icon-container {
-          position: relative; /* Necessary for positioning the label */
-          width: 40px;
-          height: 40px;
+          position: relative;
+          width: 60px;
+          height: 60px;
           display: flex;
           align-items: center;
           justify-content: center;
-          transition: all 0.1s;
+          transition: all 0.2s;
+          color: colors.$dark-purple;
+          background-color: colors.$platinum;
+          border-radius: 4px;
+          box-shadow: colors.$dark-purple 0 2px 4px, colors.$dark-grey-purple 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+
+          &:focus {
+            box-shadow: colors.$platinum 0 0 0 1.5px inset, colors.$dark-purple 0 2px 4px,
+              colors.$dark-grey-purple 0 7px 13px -3px, colors.$platinum 0 -3px 0 inset;
+          }
 
           &:hover {
-            color: colors.$platinum;
+            box-shadow: colors.$dark-purple 0 4px 8px, colors.$dark-grey-purple 0 7px 13px -3px,
+              colors.$platinum 0 -3px 0 inset;
+            transform: translateY(-2px);
+          }
+
+          &:active {
+            box-shadow: colors.$platinum 0 3px 7px inset;
+            transform: translateY(2px);
           }
 
           i {
-            font-size: 2rem;
-            transition: color 0.3s;
+            font-size: 1.5rem;
           }
 
           .icon-label {
             position: absolute;
-            left: 50px;
-            background-color: colors.$slate-grey;
-            color: colors.$platinum;
+            left: 65px;
+            background-color: colors.$platinum;
+            color: colors.$dark-purple;
             padding: 15px 15px;
-            border-radius: 15px;
+            border-radius: 4px;
             font-size: 0.9rem;
+            font-weight: 700;
             white-space: nowrap;
             visibility: hidden;
             transform: translateX(-10px);
-            transition: opacity 0.3s, transform 0.3s;
+            transition: box-shadow 0.15s, transform 0.15s;
           }
 
           &:hover .icon-label {
-            opacity: 1; /* Make the label visible */
+            opacity: 1;
             visibility: visible;
-            transform: translateX(0); /* Reset transform for smooth effect */
-            box-shadow: 0 0 5px 0 colors.$slate-grey;
+            transform: translateX(0);
+            box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
           }
         }
       }
-    }
-  }
-
-  @keyframes pulse-ring {
-    0% {
-      transform: scale(0.33);
-    }
-    80%,
-    100% {
-      opacity: 0;
-    }
-  }
-
-  @keyframes pulse-dot {
-    0% {
-      transform: scale(0.8);
-    }
-    50% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(0.8);
     }
   }
 </style>

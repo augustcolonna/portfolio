@@ -1,4 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  const attributes: string[] = [
+    'Software Engineer',
+    'Outdoor Enthusiast ',
+    'Espresso Consumer',
+    'Problem Solver',
+    'Lifelong Learner',
+  ];
+</script>
 
 <template>
   <div class="about-container">About Me View</div>

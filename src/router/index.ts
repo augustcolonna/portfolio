@@ -22,16 +22,7 @@ export const routes = [
     component: About,
     meta: {
       headline: 'About',
-      icon: 'fa-solid fa-person',
-    },
-  },
-  {
-    path: '/contact',
-    name: 'contact',
-    component: Contact,
-    meta: {
-      headline: 'Contact',
-      icon: 'fa-solid fa-address-card',
+      icon: 'fa-solid fa-circle-info',
     },
   },
   {
@@ -44,12 +35,12 @@ export const routes = [
     },
   },
   {
-    path: '/projects',
-    name: 'projects',
-    component: Projects,
+    path: '/contact',
+    name: 'contact',
+    component: Contact,
     meta: {
-      headline: 'Projects',
-      icon: 'fa-solid fa-rocket',
+      headline: 'Contact',
+      icon: 'fa-solid fa-paper-plane',
     },
   },
 ];

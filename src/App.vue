@@ -7,7 +7,7 @@
     <div class="app-body">
       <NavBar />
       <div class="content">
-        <RouterView class="view" />
+        <RouterView />
       </div>
     </div>
   </div>
@@ -18,7 +18,6 @@
   .app-body {
     display: flex;
     flex-direction: row;
-    background-color: colors.$dark-purple;
     height: 100vh;
     width: 100vw;
 
