@@ -1,8 +1,20 @@
-import App from '@/App.vue';
-import router from '@/router';
+import { createApp } from 'vue';
+
+import { createVuetify } from 'vuetify';
+import 'vuetify/styles';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
+
 import '@/styles/_main.scss';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@/@types/types';
-import { createApp } from 'vue';
 
-createApp(App).use(router).mount('#app');
+import App from '@/App.vue';
+import router from '@/router';
+
+const vuetify = createVuetify({
+  components,
+  directives,
+});
+
+createApp(App).use(vuetify).use(router).mount('#app');

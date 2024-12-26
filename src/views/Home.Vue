@@ -1,19 +1,12 @@
 <script setup lang="ts">
   import profileImage from '@/assets/images/profile-img.png';
-  // import outDoorImage from '@/assets/images/outdoor.png';
   import Button from '@/components/ui/Button.vue';
-  import { ref } from 'vue';
   import { Portfolio } from '@/@types/types';
 
   const socialLink: Portfolio.SocialLinks[] = [
     { name: 'linkedIn', link: 'https://www.linkedin.com/in/august-colonna/' },
     { name: 'Git Hub', link: 'https://www.github.com/augustcolonna/' },
   ];
-
-  // const image = ref<string>(profileImage);
-  // setInterval(() => {
-  //   image.value = image.value === profileImage ? outDoorImage : profileImage;
-  // }, 4000);
 </script>
 
 <template>
@@ -45,9 +38,6 @@
         </a>
       </div>
     </div>
-    <div class="profile-container">
-      <img :src="profileImage" class="profile-image" alt="profile" />
-    </div>
   </div>
 </template>
 
@@ -70,7 +60,6 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-      // height: 40%;
       width: 80%;
 
       h1 {
@@ -79,7 +68,7 @@
         align-items: center;
         font-size: 10rem;
         width: 100%;
-        background-color: linear-gradient(to right, colors.$platinum 50%, colors.$dark-purple 50%);
+        animation: fade-in 1s ease-in;
       }
 
       h2 {
@@ -88,6 +77,7 @@
         align-items: center;
         margin-top: 9px;
         font-size: 3rem;
+        animation: fade-in 1s ease-in;
       }
 
       .breakline {
@@ -107,25 +97,7 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 30px;
-    }
-
-    .attributes {
-      position: relative;
-      display: flex;
-      flex-direction: row;
-      width: 40%;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      z-index: 1;
-
-      .attribute {
-        margin: 10px;
-        p {
-          margin: 0;
-          font-weight: bold;
-        }
-      }
+      animation: slide-up 1s ease-in;
     }
 
     .social {
@@ -141,6 +113,7 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        animation: slide-up 1s ease-in;
 
         a {
           margin: 0 20px;
@@ -159,14 +132,23 @@
       }
     }
 
-    .profile-container {
-      position: fixed;
-      bottom: 0;
-      right: 0;
+    @keyframes slide-up {
+      0% {
+        transform: translateY(50%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
 
-      .profile-image {
-        height: 650px;
-        padding: 0;
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
       }
     }
   }
