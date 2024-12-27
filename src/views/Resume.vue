@@ -1,7 +1,12 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+  import Button from '@/components/ui/Button.vue';
+  import TimeLine from '@/components/ui/TimeLine.vue';
+</script>
 
 <template>
-  <div class="resume-container">Experience View</div>
+  <div class="resume-container">
+    <TimeLine />
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -10,8 +15,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     color: colors.$platinum;
+    overflow-y: auto;
   }
 </style>
