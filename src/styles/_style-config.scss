@@ -1,0 +1,56 @@
+@use '@fortawesome/fontawesome-free/scss/fontawesome';
+@use '@fortawesome/fontawesome-free/scss/solid';
+@use '@fortawesome/fontawesome-free/scss/brands';
+@use '@fortawesome/fontawesome-free/scss/regular';
+
+//Project color pallate
+$platinum: #e3e7e7;
+$slate-grey: #787990;
+$dark-grey-purple: #3e404f;
+$dark-purple: #2d3047;
+$celestial-blue: #3a9ad1;
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: $dark-grey-purple;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $dark-grey-purple;
+  background-color: $dark-purple;
+
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: $platinum;
+  color: $dark-purple;
+  border-radius: 4px;
+  box-shadow: $dark-purple 0 2px 4px, $dark-grey-purple 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  padding: 9px 9px;
+}

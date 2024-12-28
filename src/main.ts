@@ -1,10 +1,8 @@
 import { createApp } from 'vue';
-import vuetify from '@/plugins/vuetify';
-import '@/styles/_main.scss';
+import '@/styles/_style-config.scss';
 import '@fortawesome/fontawesome-free/css/all.css';
-import '@/@types/types';
 
 import App from '@/App.vue';
 import router from '@/router';
 
-createApp(App).use(vuetify).use(router).mount('#app');
+createApp(App).use(router).mount('#app');

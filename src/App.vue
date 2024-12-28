@@ -14,7 +14,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_style-config.scss' as colors;
   .app-body {
     display: flex;
     flex-direction: row;

@@ -62,7 +62,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_style-config.scss' as colors;
   .modal-container {
     position: fixed;
     height: 100%;
@@ -71,29 +71,30 @@
     left: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     z-index: 10;
     overflow: auto;
-    backdrop-filter: blur(5px);
-    animation: fade-in 0.5s ease-in;
+    backdrop-filter: blur(15px);
+    animation: fade-in 0.2s ease-in;
 
     .modal-content {
-      background-color: colors.$dark-purple;
+      background-color: colors.$platinum;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       position: fixed;
       top: 30%;
-      border: solid 5px colors.$platinum;
+      height: 100%;
       border-radius: 30px;
-      color: colors.$platinum;
+      color: colors.$dark-purple;
 
       .modal-header {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding: 15px;
-        border-bottom: solid 5px colors.$platinum;
+        padding: 40px;
+        border-bottom: solid 5px colors.$dark-purple;
         width: 100%;
       }
 
@@ -101,16 +102,7 @@
         max-height: 65vh;
         overflow-y: auto;
         overflow: auto;
-      }
-
-      footer {
-        padding: 15px;
-      }
-
-      footer .button-bar {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
+        padding: 30px;
       }
 
       .modal-enter-active,
@@ -123,8 +115,6 @@
         opacity: 1;
       }
     }
-
-    //calculate center for modal ==> 50% - width/2 + widthOfSideBar/2
 
     .xl,
     .l,
@@ -146,15 +136,6 @@
     }
     100% {
       opacity: 1;
-    }
-  }
-
-  @keyframes fade-out {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
     }
   }
 </style>

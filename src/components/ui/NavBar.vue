@@ -17,7 +17,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_style-config.scss' as colors;
 
   .navbar-container {
     position: relative;
@@ -46,6 +46,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        opacity: 0;
+        animation: fade-in 0.8s forwards;
 
         a {
           text-decoration: none;
@@ -116,6 +118,17 @@
           }
         }
       }
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>

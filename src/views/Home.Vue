@@ -1,7 +1,5 @@
 <script setup lang="ts">
-  import profileImage from '@/assets/images/profile-img.png';
   import Button from '@/components/ui/Button.vue';
-  import { Portfolio } from '@/@types/types';
 
   const socialLink: Portfolio.SocialLinks[] = [
     { name: 'linkedIn', link: 'https://www.linkedin.com/in/august-colonna/' },
@@ -42,7 +40,7 @@
 </template>
 
 <style lang="scss" scoped>
-  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_style-config.scss' as colors;
 
   .home-container {
     display: flex;

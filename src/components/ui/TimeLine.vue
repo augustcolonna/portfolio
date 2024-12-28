@@ -2,14 +2,10 @@
   import { ref } from 'vue';
   import Button from '@/components/ui/Button.vue';
   import TimeLineModal from '@/components/ui/TimeLineModal.vue';
-  import Kinexon from '@/assets/images/KINEXON.jpg';
-  import Shopmokney from '@/assets/images/SHOPMONKEY.png';
-  import Podium from '@/assets/images/PODIUM.png';
-  import UofU from '@/assets/images/UOFU.png';
 
   const experiences = ref<Portfolio.ModalConfig[]>([
     {
-      image: Kinexon,
+      // image: Kinexon,
       experienceName: 'Kinexon',
       experiencePosition: 'Software Engineer',
       startDate: 'Feb 1, 2024',
@@ -20,7 +16,7 @@
     },
     {
       experienceName: 'Career Switch',
-      experiencePosition: 'Sales to Software Development',
+      // experiencePosition: 'Sales to Software Development',
       startDate: 'July 2022',
       endDate: ' Feb 2024',
       location: 'Remote',
@@ -28,7 +24,7 @@
         'During this time, I switched my career from sales to software development. I was provided the opportunity to change careers and chade something I was truly passtionate about. After around a year of selft study, and a technical bootcamp, I was able to secure my first job as a software engineer.',
     },
     {
-      image: Shopmokney,
+      // image: Shopmokney,
       experienceName: 'Shopmonkey',
       experiencePosition: 'Account Executive',
       startDate: 'March 2021',
@@ -38,7 +34,7 @@
         'Regularly met and surpassed monthly quota target and recognized as a top performer of the team. Represented the sales team for the enablement cohort (Cross departmental committee for product updates, changes, new processes, etc), also led sales training for the sales team. Prepared and delivered on-site presentations to high profile prospective customers.',
     },
     {
-      image: Podium,
+      // image: Podium,
       experienceName: 'Podium',
       experiencePosition: 'Account Executive',
       startDate: 'May 2019',
@@ -48,7 +44,7 @@
         'Met and Surpassed monthly quota regularly. Maintained a rigid schedule of arriving at the office before 6 AM. Top Performer of 2019 and was invited to be part of the Founders Club. Promoted 3 times within 2 years',
     },
     {
-      image: UofU,
+      // image: UofU,
       experienceName: 'The Unviserity of Utah',
       experiencePosition: 'Aisstant Coach',
       startDate: 'August 2018',
@@ -56,6 +52,16 @@
       location: 'Salt Lake City, UT',
       content:
         'Assistant Coach for the Inaugural Division 1 Season.Served the organization as a captain for two consecutive seasons.Instrumental in building the culture and laying the foundation for future NCAA athletes.Offered the position as an assistant coach by Head Coach Brian Holman after senior season',
+    },
+    {
+      // image: UofU,
+      experienceName: 'Williams College',
+      experiencePosition: 'Summer Research Assistant',
+      startDate: 'June 2017',
+      endDate: 'August 2017',
+      location: 'Williamstown, MA',
+      content:
+        'Research Assistant to Professor David Zimmerman, Economics. Helped Professor David Zimmerman prepare for his sports econometrics class. Provided Prof. Zimmerman with weekly memos containing questions, information and data points from various sports analytics research journals to use and include in his upcomming semester.',
     },
   ]);
 
@@ -75,15 +81,11 @@
 
 <template>
   <div class="timeline-container">
-    <div class="see-more">
-      Scroll Right To See More
-      <i class="fa-solid fa-angles-right"></i>
-    </div>
-    <v-timeline direction="horizontal" align="center">
-      <v-timeline-item class="timeline-item" size="large" v-for="item in experiences" :key="item.experienceName">
-        <v-card>
-          <v-card-title>{{ item.experienceName }}</v-card-title>
-          <v-card-text>
+    <div class="timeline">
+      <div class="timeline-item" size="large" v-for="item in experiences" :key="item.experienceName">
+        <div class="timeline-card">
+          <div class="card-title title">{{ item.experienceName }}</div>
+          <div class="card-text">
             <p>
               {{ item.experiencePosition }}
               <br />
@@ -91,115 +93,98 @@
               <br />
               {{ item.location }}
             </p>
-            <Button @click="openModal(item.experienceName, item)" :text="'More'" :size="'sm'" />
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
-    </v-timeline>
+            <Button @click="openModal(item.experienceName ?? '', item)" :text="'More'" :size="'sm'" />
+          </div>
+        </div>
+      </div>
+    </div>
     <TimeLineModal v-if="modalConfig" :config="modalConfig" @closeModal="closeModal" />
   </div>
 </template>
 
 <style lang="scss" scoped>
-  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_style-config.scss' as colors;
   .timeline-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    color: colors.$dark-purple;
+    margin-top: 0;
+    margin-bottom: 20px;
+    animation: fade-in 1s ease-in;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+
+  .timeline {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    color: colors.$dark-purple;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    animation: fade-in 1s ease-in;
-    overflow-x: auto;
-    overflow-y: auto;
 
-    .see-more {
-      color: colors.$platinum;
-      font-size: 1.5rem;
-      position: fixed;
-      top: 20%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0.3;
+    .timeline-item {
+      margin: 30px;
+      .timeline-card {
+        width: 500px;
+        height: 200px;
+        background-color: colors.$platinum;
+        color: colors.$platinum;
+        border-radius: 5px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        animation: fade-in 0.8s forwards;
 
-      i {
-        margin-left: 5px;
-        animation: pulse 1.3s infinite;
-      }
-    }
-
-    .v-timeline {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      left: 10%;
-
-      .v-timeline-item {
-        .v-timeline-divider {
-          color: colors.$platinum;
+        &:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
 
-        .v-card {
-          width: 500px;
-          height: 200px;
-          background-color: colors.$platinum;
-          color: colors.$platinum;
-          border-radius: 5px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          transition: all 0.3s ease-in-out;
+        .card-title {
+          margin-bottom: 10px;
+          font-size: 1.5rem;
+          font-weight: 700;
+          text-align: center;
+          color: colors.$dark-purple;
+        }
 
-          &:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-          }
+        .card-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
 
-          .v-card-title {
-            font-size: 1.5rem;
-            font-weight: 700;
+          p {
+            font-size: 1rem;
             text-align: center;
             color: colors.$dark-purple;
           }
-
-          .v-card-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            // padding: 10px;
-
-            p {
-              font-size: 1rem;
-              text-align: center;
-              color: colors.$dark-purple;
-            }
-          }
         }
+      }
+    }
+
+    // Apply different delays to each timeline-item
+    @for $i from 1 through 10 {
+      .timeline-item:nth-child(#{$i}) .timeline-card {
+        animation-delay: #{0.2 * $i}s;
       }
     }
   }
 
   @keyframes fade-in {
-    0% {
+    from {
       opacity: 0;
+      transform: translateY(20px);
     }
-    100% {
+    to {
       opacity: 1;
-    }
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.3);
-    }
-    100% {
-      transform: scale(1);
+      transform: translateY(0);
     }
   }
 </style>

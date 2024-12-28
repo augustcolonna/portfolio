@@ -3,8 +3,6 @@
     text: String,
     size: String,
   });
-
-  console.log(props.text, props.size, '<-----');
 </script>
 
 <template>
@@ -19,7 +17,7 @@
 </template>
 
 <style scoped lang="scss">
-  @use '@/styles/_colors.scss' as colors;
+  @use '@/styles/_style-config.scss' as colors;
 
   .btn {
     display: inline-flex;
