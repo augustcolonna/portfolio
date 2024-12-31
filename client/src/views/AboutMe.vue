@@ -49,7 +49,8 @@
     height: 100vh;
     width: 100%;
     color: colors.$platinum;
-    margin-left: 20px;
+    padding: 0;
+    margin: 0 auto;
     overflow-y: auto;
 
     .history-container {
@@ -95,7 +96,6 @@
     }
 
     .attributes {
-      // margin-top: 30px;
       margin-bottom: 30px;
       height: 700px;
       width: 80%;
@@ -139,6 +139,48 @@
       .attribute:nth-child(8) {
         background-color: colors.$dark-purple;
         border-radius: 0px 0px 58px 0px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .about-container {
+      height: auto; // Allow the container to take auto height
+      padding: 20px; // Add some padding for better spacing
+      margin-top: 50px;
+
+      .history-container {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 20px;
+
+        img {
+          height: 200px;
+        }
+
+        .history {
+          padding: 10px;
+          margin: 0;
+          width: 100%;
+
+          p {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .attributes {
+        width: 100%;
+        height: auto;
+
+        border-radius: 0px 0px 58px 58px;
+
+        .attribute {
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }

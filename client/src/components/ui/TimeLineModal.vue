@@ -16,40 +16,41 @@
 </script>
 
 <template>
-  <Modal @closeModal="emit('closeModal')" :size="'l'" :disableBackgroundClose="false">
-    <template v-slot:header>
-      <div class="head">
-        <h1>{{ props.config.experienceName }}</h1>
-        <h3 v-if="props.config.experiencePosition">{{ props.config.experiencePosition }}</h3>
-        <h3>{{ experienceDate }}</h3>
-        <h3>{{ props.config.location }}</h3>
-      </div>
-      <img v-if="props.config.image" :src="props.config.image" alt="company logo" />
-    </template>
-    <template v-slot:default>
-      <div class="experience-content">
-        <p>{{ props.config.content }}</p>
-      </div>
-    </template>
-  </Modal>
+  <div class="container">
+    <Modal @closeModal="emit('closeModal')" :size="'l'" :disableBackgroundClose="false">
+      <template v-slot:header>
+        <div class="head">
+          <h1>{{ props.config.experienceName }}</h1>
+          <h3 v-if="props.config.experiencePosition">{{ props.config.experiencePosition }}</h3>
+          <h3>{{ experienceDate }}</h3>
+          <h3>{{ props.config.location }}</h3>
+        </div>
+        <img v-if="props.config.image" :src="props.config.image" alt="company logo" />
+      </template>
+      <template v-slot:default>
+        <div class="experience-content">
+          <p>{{ props.config.content }}</p>
+        </div>
+      </template>
+    </Modal>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-  .head {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-left: 15px;
-  }
-
-  img {
-    width: 400px;
-    border-radius: 10px;
-  }
-
-  .experience-content {
-    padding: 15px;
-    font-size: 1.2rem;
+  .container {
     height: 100%;
+    width: 100%;
+    .head {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-left: 15px;
+    }
+
+    .experience-content {
+      padding: 15px;
+      font-size: 1.2rem;
+      height: 100%;
+    }
   }
 </style>

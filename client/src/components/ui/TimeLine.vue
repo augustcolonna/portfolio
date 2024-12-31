@@ -82,7 +82,7 @@
 <template>
   <div class="timeline-container">
     <div class="timeline">
-      <div class="timeline-item" size="large" v-for="item in experiences" :key="item.experienceName">
+      <div class="timeline-item" v-for="item in experiences" :key="item.experienceName">
         <div class="timeline-card">
           <div class="card-title title">{{ item.experienceName }}</div>
           <div class="card-text">
@@ -116,10 +116,6 @@
     margin-bottom: 20px;
     animation: fade-in 1s ease-in;
     overflow-y: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
   }
 
   .timeline {
@@ -170,10 +166,83 @@
       }
     }
 
-    // Apply different delays to each timeline-item
     @for $i from 1 through 10 {
       .timeline-item:nth-child(#{$i}) .timeline-card {
         animation-delay: #{0.2 * $i}s;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .timeline-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      color: colors.$dark-purple;
+      margin-top: 0;
+      margin: 0;
+      padding: 0;
+      animation: fade-in 1s ease-in;
+      overflow-y: auto;
+      margin-top: 120px;
+    }
+
+    .timeline {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .timeline-item {
+        margin: 30px;
+        width: 70%;
+
+        .timeline-card {
+          width: 100%;
+          height: 100%;
+          background-color: colors.$platinum;
+          color: colors.$platinum;
+          border-radius: 5px;
+          opacity: 0;
+          animation: fade-in 0.8s forwards;
+
+          &:hover {
+            box-shadow: 0 0px 6px colors.$platinum;
+            cursor: pointer;
+          }
+
+          .card-title {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+            color: colors.$dark-purple;
+          }
+
+          .card-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+              font-size: 1rem;
+              text-align: center;
+              color: colors.$dark-purple;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      @for $i from 1 through 10 {
+        .timeline-item:nth-child(#{$i}) .timeline-card {
+          animation-delay: #{0.2 * $i}s;
+        }
       }
     }
   }

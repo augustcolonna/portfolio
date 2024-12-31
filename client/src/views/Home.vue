@@ -150,4 +150,31 @@
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .home-container {
+      .welcome {
+        h1 {
+          font-size: 4rem;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+      }
+
+      .buttons {
+        width: 100%;
+        padding: 0 10px;
+      }
+
+      .social {
+        .social-links {
+          a {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+  }
 </style>

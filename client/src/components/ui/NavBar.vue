@@ -20,15 +20,15 @@
   @use '@/styles/_style-config.scss' as colors;
 
   .navbar-container {
-    position: relative;
-    background-color: colors.$dark-purple;
-    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; // Ensure the navbar takes full height of the viewport
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    left: 0;
-    top: 0;
     z-index: 3;
 
     .side-nav {
@@ -115,6 +115,103 @@
             visibility: visible;
             transform: translateX(0);
             box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .navbar-container {
+      position: relative;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+
+      .side-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        height: auto;
+
+        .routes-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          gap: 30px;
+          margin-top: 20px;
+          width: 100%;
+          opacity: 0;
+          animation: fade-in 0.8s forwards;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+            margin: 10px 0;
+
+            &.router-link-active {
+              background-color: colors.$dark-purple;
+              color: colors.$platinum;
+              border: solid 1px colors.$platinum;
+              transition: all 0.2s;
+            }
+          }
+
+          .icon-container {
+            position: relative;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            color: colors.$dark-purple;
+            background-color: colors.$platinum;
+            border-radius: 4px;
+            box-shadow: colors.$dark-purple 0 2px 4px, colors.$dark-grey-purple 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+
+            &:focus {
+              box-shadow: colors.$platinum 0 0 0 1.5px inset, colors.$dark-purple 0 2px 4px,
+                colors.$dark-grey-purple 0 7px 13px -3px, colors.$platinum 0 -3px 0 inset;
+            }
+
+            &:hover {
+              box-shadow: colors.$dark-purple 0 4px 8px, colors.$dark-grey-purple 0 7px 13px -3px,
+                colors.$platinum 0 -3px 0 inset;
+              transform: translateY(-2px);
+            }
+
+            &:active {
+              box-shadow: colors.$platinum 0 3px 7px inset;
+              transform: translateY(2px);
+            }
+
+            i {
+              font-size: 1.5rem;
+            }
+
+            .icon-label {
+              visibility: hidden;
+              opacity: 0;
+
+              &:hover .icon-label {
+                opacity: 0;
+                visibility: hidden;
+              }
+
+              &:active {
+                opacity: 0;
+                visibility: hidden;
+              }
+            }
           }
         }
       }
