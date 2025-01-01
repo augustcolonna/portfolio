@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "node",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "strict": true,
     "jsx": "preserve",
     "jsxImportSource": "vue",
@@ -12,11 +12,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "rollup/parseAst": ["./node_modules/rollup/dist/parseAst"]
+      "@/*": ["src/*"]
     },
     "outDir": "./dist"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/@types/**/*.d.ts"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/@types/**/*.d.ts"]
 }
