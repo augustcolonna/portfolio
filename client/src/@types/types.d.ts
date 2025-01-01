@@ -10,8 +10,7 @@ declare namespace Portfolio {
     startDate?: string;
     endDate?: string;
     location?: string;
-    content?: string;
-    image?: string;
+    content?: string[];
   }
 
   interface ChatMessage {

@@ -25,11 +25,12 @@
           <h3>{{ experienceDate }}</h3>
           <h3>{{ props.config.location }}</h3>
         </div>
-        <img v-if="props.config.image" :src="props.config.image" alt="company logo" />
       </template>
       <template v-slot:default>
         <div class="experience-content">
-          <p>{{ props.config.content }}</p>
+          <ul>
+            <li v-for="content in props.config.content" :key="content">{{ content }}</li>
+          </ul>
         </div>
       </template>
     </Modal>
@@ -37,6 +38,7 @@
 </template>
 
 <style lang="scss" scoped>
+  @use '@/styles/_style-config.scss' as colors;
   .container {
     height: 100%;
     width: 100%;
@@ -51,6 +53,26 @@
       padding: 15px;
       font-size: 1.2rem;
       height: 100%;
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+
+        li {
+          border-radius: 15px;
+          border: solid 4px colors.$dark-purple;
+          color: colors.$dark-purple;
+          padding: 10px;
+          margin: 3px;
+          ::marker {
+            font-weight: 600;
+            color: colors.$dark-purple;
+            font-size: 1.8rem;
+          }
+        }
+      }
     }
   }
 </style>

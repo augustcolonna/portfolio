@@ -130,6 +130,15 @@
     filter: blur(5px);
   }
 
+  @media only screen and (max-width: 768px) {
+    .modal-container {
+      .modal-content {
+        width: 90%;
+        height: 90%;
+      }
+    }
+  }
+
   @keyframes fade-in {
     0% {
       opacity: 0;

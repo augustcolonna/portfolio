@@ -199,18 +199,7 @@
             }
 
             .icon-label {
-              visibility: hidden;
-              opacity: 0;
-
-              &:hover .icon-label {
-                opacity: 0;
-                visibility: hidden;
-              }
-
-              &:active {
-                opacity: 0;
-                visibility: hidden;
-              }
+              display: none;
             }
           }
         }

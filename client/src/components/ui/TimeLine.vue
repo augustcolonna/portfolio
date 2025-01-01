@@ -11,17 +11,24 @@
       startDate: 'Feb 1, 2024',
       endDate: 'Current',
       location: 'Munich, Germany',
-      content:
-        'Development of frontend and backend software components for the sensor network. Dev. of communication protocols. Dev. of interfaces to external IT systems. Dev. of full stack system tests. Support for product innovations and release cycles of existing products. Coordination with other departments.',
+      content: [
+        'Development of frontend and backend software components for the sensor network.',
+        ' Dev. of communication protocols.',
+        'Dev. of full stack system tests.',
+        'Support for product innovations and release cycles of existing products.',
+        'Coordination with other departments.',
+      ],
     },
     {
       experienceName: 'Career Switch',
-      // experiencePosition: 'Sales to Software Development',
       startDate: 'July 2022',
       endDate: ' Feb 2024',
       location: 'Remote',
-      content:
-        'During this time, I switched my career from sales to software development. I was provided the opportunity to change careers and chade something I was truly passtionate about. After around a year of selft study, and a technical bootcamp, I was able to secure my first job as a software engineer.',
+      content: [
+        'During this time, I switched my career from sales to software development.',
+        'I was provided the opportunity to change careers and chade something I was truly passtionate about.',
+        'After around a year of selft study, and a technical bootcamp, I was able to secure my first job as a software engineer.',
+      ],
     },
     {
       // image: Shopmokney,
@@ -30,8 +37,11 @@
       startDate: 'March 2021',
       endDate: 'Novelmber 2022',
       location: 'Salt Lake City, UT',
-      content:
-        'Regularly met and surpassed monthly quota target and recognized as a top performer of the team. Represented the sales team for the enablement cohort (Cross departmental committee for product updates, changes, new processes, etc), also led sales training for the sales team. Prepared and delivered on-site presentations to high profile prospective customers.',
+      content: [
+        'Regularly met and surpassed monthly quota target and recognized as a top performer of the team.',
+        'Represented the sales team for the enablement cohort (Cross departmental committee for product updates, changes, new processes, etc), also led sales training for the sales team.',
+        'Prepared and delivered on-site presentations to high profile prospective customers.',
+      ],
     },
     {
       // image: Podium,
@@ -40,8 +50,12 @@
       startDate: 'May 2019',
       endDate: 'March 2021',
       location: 'Salt Lake City, UT',
-      content:
-        'Met and Surpassed monthly quota regularly. Maintained a rigid schedule of arriving at the office before 6 AM. Top Performer of 2019 and was invited to be part of the Founders Club. Promoted 3 times within 2 years',
+      content: [
+        'Met and Surpassed monthly quota regularly.',
+        'Maintained a rigid schedule of arriving at the office before 6 AM.',
+        'Top Performer of 2019 and was invited to be part of the Founders Club.',
+        'Promoted 3 times within 2 years',
+      ],
     },
     {
       // image: UofU,
@@ -50,8 +64,12 @@
       startDate: 'August 2018',
       endDate: 'May 2019',
       location: 'Salt Lake City, UT',
-      content:
-        'Assistant Coach for the Inaugural Division 1 Season.Served the organization as a captain for two consecutive seasons.Instrumental in building the culture and laying the foundation for future NCAA athletes.Offered the position as an assistant coach by Head Coach Brian Holman after senior season',
+      content: [
+        'Assistant Coach for the Inaugural Division 1 Season.',
+        'Served the organization as a captain for two consecutive seasons.',
+        'Instrumental in building the culture and laying the foundation for future NCAA athletes.',
+        'Offered the position as an assistant coach by Head Coach Brian Holman after senior season',
+      ],
     },
     {
       // image: UofU,
@@ -60,8 +78,11 @@
       startDate: 'June 2017',
       endDate: 'August 2017',
       location: 'Williamstown, MA',
-      content:
-        'Research Assistant to Professor David Zimmerman, Economics. Helped Professor David Zimmerman prepare for his sports econometrics class. Provided Prof. Zimmerman with weekly memos containing questions, information and data points from various sports analytics research journals to use and include in his upcomming semester.',
+      content: [
+        'Research Assistant to Professor David Zimmerman, Economics.',
+        'Helped Professor David Zimmerman prepare for his sports econometrics class.',
+        'Provided Prof. Zimmerman with weekly memos containing questions, information and data points from various sports analytics research journals to use and include in his upcomming semester.',
+      ],
     },
   ]);
 
@@ -187,7 +208,7 @@
       padding: 0;
       animation: fade-in 1s ease-in;
       overflow-y: auto;
-      margin-top: 120px;
+      margin-top: 110px;
     }
 
     .timeline {

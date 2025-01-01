@@ -161,6 +161,7 @@
         .history {
           padding: 10px;
           margin: 0;
+
           width: 100%;
 
           p {
