@@ -23,7 +23,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100px;
     height: 100vh; // Ensure the navbar takes full height of the viewport
     background-color: transparent;
     display: flex;
@@ -130,7 +130,7 @@
       align-items: center;
       flex-direction: row;
       width: 100%;
-      height: 100%;
+      height: 100px;
       z-index: 3;
 
       .side-nav {

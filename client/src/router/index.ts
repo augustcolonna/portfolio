@@ -4,7 +4,6 @@ import Home from '@/views/Home.vue';
 import About from '@/views/AboutMe.vue';
 import Contact from '@/views/Contact.vue';
 import Resume from '@/views/Resume.vue';
-import Projects from '@/views/Projects.vue';
 
 export const routes = [
   {
@@ -13,7 +12,7 @@ export const routes = [
     component: Home,
     meta: {
       headline: 'Home',
-      icon: 'fa-solid fa-house',
+      icon: 'fa fa-house',
     },
   },
   {
@@ -22,7 +21,7 @@ export const routes = [
     component: About,
     meta: {
       headline: 'About',
-      icon: 'fa-solid fa-circle-info',
+      icon: 'fa fa-circle-info',
     },
   },
   {
@@ -31,7 +30,7 @@ export const routes = [
     component: Resume,
     meta: {
       headline: 'Experience',
-      icon: 'fa-solid fa-timeline',
+      icon: 'fa fa-timeline',
     },
   },
   {
@@ -40,7 +39,7 @@ export const routes = [
     component: Contact,
     meta: {
       headline: 'Contact',
-      icon: 'fa-solid fa-paper-plane',
+      icon: 'fa fa-paper-plane',
     },
   },
 ];

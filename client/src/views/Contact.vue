@@ -1,5 +1,6 @@
 <script setup lang="ts">
   import { ref, watch, onMounted } from 'vue';
+  import emailjs from 'emailjs-com';
   import Button from '@/components/ui/Button.vue';
 
   const name = ref<string>('');
@@ -27,35 +28,35 @@
   };
 
   const sendEmail = async () => {
-    try {
-      emailSent.value = false;
-      const response = await fetch('http://localhost:8080/api/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name.value,
-          email: userEmail.value,
-          message: message.value,
-        }),
-      });
+    emailSent.value = false;
+    const templateParams = {
+      from_name: name.value,
+      from_email: userEmail.value,
+      message: message.value,
+    };
 
-      if (response.ok) {
-        successMessage.value = 'Your email was sent successfully!';
-        errorMessage.value = '';
-        name.value = '';
-        userEmail.value = '';
-        message.value = '';
-        emailSent.value = true;
-        localStorage.removeItem('name');
-        localStorage.removeItem('userEmail');
-        localStorage.removeItem('message');
-      } else {
-        throw new Error('Failed to send email.');
+    await emailjs.send('service_mfcg2es', 'template_b86pr4y', templateParams, 'pnwaGUZVCwK3-HyMX').then(
+      (response) => {
+        if (response.status === 200) {
+          successMessage.value = 'Your email was sent successfully!';
+          errorMessage.value = '';
+          name.value = '';
+          userEmail.value = '';
+          message.value = '';
+          emailSent.value = true;
+          localStorage.removeItem('name');
+          localStorage.removeItem('userEmail');
+          localStorage.removeItem('message');
+        } else {
+          throw new Error('Failed to send email.');
+        }
+      },
+      (error) => {
+        successMessage.value = '';
+        errorMessage.value = 'Something went wrong. Please try again later.';
+        console.log('error:', error);
       }
-    } catch (error) {
-      successMessage.value = '';
-      errorMessage.value = 'Something went wrong. Please try again later.';
-    }
+    );
   };
 
   watch([name, userEmail, message], ([newName, newUserEmail, newMessage]) => {
@@ -80,14 +81,26 @@
 <template>
   <div class="contact-container">
     <h1 class="title">
-      Send me an email
-      <i class="fas fa-envelope"></i>
+      Shoot me a message
+      <i class="fa fa-envelope"></i>
     </h1>
 
     <form @submit.prevent="sendEmail">
-      <input v-model="name" placeholder="First name, last name" required />
-      <input v-model="userEmail" type="email" placeholder="example@example.com" required />
-      <textarea v-model="message" placeholder="Write your message here" required></textarea>
+      <label for="name">
+        Name
+        <input v-model="name" placeholder="First name, last name" required />
+      </label>
+
+      <label for="userEmail">
+        Your Email address - so I can get back to you
+        <input v-model="userEmail" type="email" placeholder="example@example.com" required />
+      </label>
+
+      <label for="message">
+        Message
+        <textarea v-model="message" placeholder="Write your message here" required></textarea>
+      </label>
+
       <Button
         v-if="!emailSent"
         @click="buttonObject"
@@ -111,7 +124,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    width: 100%;
+    width: 70%;
     color: colors.$platinum;
     animation: fade-in 0.8s;
 
@@ -120,7 +133,19 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      width: 80%;
+      width: 100%;
+    }
+
+    label {
+      font-size: 1.2rem;
+      margin: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: solid 4px colors.$platinum;
+      padding: 10px;
+      border-radius: 15px;
     }
 
     input {
@@ -153,7 +178,11 @@
       }
     }
 
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 768px) {
+      label {
+        width: 100%;
+      }
+
       input {
         width: 100%;
       }

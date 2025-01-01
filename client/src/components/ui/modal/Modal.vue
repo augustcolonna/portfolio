@@ -84,7 +84,6 @@
       justify-content: center;
       align-items: center;
       position: fixed;
-      top: 30%;
       height: 100%;
       border-radius: 30px;
       color: colors.$dark-purple;
@@ -99,10 +98,13 @@
       }
 
       .modal-body {
-        max-height: 65vh;
+        height: 100%;
         overflow-y: auto;
         overflow: auto;
-        padding: 30px;
+      }
+
+      footer {
+        margin-bottom: 20px;
       }
 
       .modal-enter-active,
@@ -122,7 +124,7 @@
     .s,
     .xs {
       width: 900px;
-      height: 500px;
+      height: 600px;
     }
   }
 
