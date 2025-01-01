@@ -26,5 +26,9 @@ export default defineConfig(({ mode }) => {
       host: 'localhost',
       port: 5000,
     },
+    build: {
+      outDir: 'dist', // Ensure the output directory is set
+      sourcemap: true, // Enable source maps for debugging
+    },
   };
 });

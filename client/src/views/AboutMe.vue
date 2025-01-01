@@ -145,9 +145,9 @@
 
   @media only screen and (max-width: 768px) {
     .about-container {
-      height: auto; // Allow the container to take auto height
-      padding: 20px; // Add some padding for better spacing
-      margin-top: 50px;
+      height: auto;
+      padding: 10px;
+      // margin-top: 50px;
 
       .history-container {
         flex-direction: column;

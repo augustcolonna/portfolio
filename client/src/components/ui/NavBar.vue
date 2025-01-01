@@ -124,14 +124,14 @@
   @media only screen and (max-width: 768px) {
     .navbar-container {
       position: relative;
-      background-color: transparent;
+      background: transparent;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: row;
       width: 100%;
       height: 100px;
-      z-index: 3;
+      z-index: 8;
 
       .side-nav {
         display: flex;
@@ -139,6 +139,7 @@
         justify-content: center;
         width: 100%;
         height: auto;
+        background-color: transparent;
 
         .routes-container {
           display: flex;

@@ -5,7 +5,9 @@
 <template>
   <div id="app" class="app">
     <div class="app-body">
-      <NavBar />
+      <div class="navbar">
+        <NavBar />
+      </div>
       <div class="content">
         <RouterView />
       </div>
@@ -31,12 +33,20 @@
       margin: 0;
       padding: 0;
 
+      .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100px;
+      }
+
       .content {
         display: flex;
         justify-content: center;
         align-items: center;
         flex: 1;
-        width: 100%;
+        overflow-y: auto;
       }
     }
   }
@@ -44,15 +54,24 @@
   @media screen and (max-width: 768px) {
     .app {
       .app-body {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
+        display: inline-block;
+        height: 100vh;
+
+        .navbar {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100px;
+          width: 100%;
+          background-color: transparent;
+        }
 
         .content {
           display: flex;
           justify-content: center;
           align-items: center;
           width: 100%;
+          top: 0;
         }
       }
     }
