@@ -39,6 +39,7 @@
         align-items: center;
         height: 100%;
         width: 100px;
+        background: transparent;
       }
 
       .content {
@@ -63,7 +64,7 @@
           align-items: center;
           height: 100px;
           width: 100%;
-          background-color: transparent;
+          background: transparent;
         }
 
         .content {

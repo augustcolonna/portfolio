@@ -3,19 +3,7 @@
 </script>
 
 <template>
-  <div class="resume-container">
-    <TimeLine />
-  </div>
+  <TimeLine />
 </template>
 
-<style lang="scss" scoped>
-  @use '@/styles/_style-config.scss' as colors;
-  .resume-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    color: colors.$platinum;
-  }
-</style>
+<style lang="scss" scoped></style>

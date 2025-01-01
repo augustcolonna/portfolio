@@ -102,23 +102,22 @@
 
 <template>
   <div class="timeline-container">
-    <div class="timeline">
-      <div class="timeline-item" v-for="item in experiences" :key="item.experienceName">
-        <div class="timeline-card">
-          <div class="card-title title">{{ item.experienceName }}</div>
-          <div class="card-text">
-            <p>
-              {{ item.experiencePosition }}
-              <br />
-              {{ item.startDate }} - {{ item.endDate }}
-              <br />
-              {{ item.location }}
-            </p>
-            <Button @click="openModal(item.experienceName ?? '', item)" :text="'More'" :size="'sm'" />
-          </div>
+    <div class="timeline-item" v-for="item in experiences" :key="item.experienceName">
+      <div class="timeline-card">
+        <div class="card-title title">{{ item.experienceName }}</div>
+        <div class="card-text">
+          <p>
+            {{ item.experiencePosition }}
+            <br />
+            {{ item.startDate }} - {{ item.endDate }}
+            <br />
+            {{ item.location }}
+          </p>
+          <Button @click="openModal(item.experienceName ?? '', item)" :text="'More'" :size="'sm'" />
         </div>
       </div>
     </div>
+
     <TimeLineModal v-if="modalConfig" :config="modalConfig" @closeModal="closeModal" />
   </div>
 </template>
@@ -133,18 +132,10 @@
     height: 100vh;
     width: 100%;
     color: colors.$dark-purple;
-    margin-top: 0;
-    margin-bottom: 20px;
+    // margin-top: 0;
+    // margin-bottom: 20px;
     animation: fade-in 1s ease-in;
     overflow-y: auto;
-  }
-
-  .timeline {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     .timeline-item {
       margin: 30px;
@@ -185,11 +176,11 @@
           }
         }
       }
-    }
 
-    @for $i from 1 through 10 {
-      .timeline-item:nth-child(#{$i}) .timeline-card {
-        animation-delay: #{0.2 * $i}s;
+      @for $i from 1 through 10 {
+        .timeline-item:nth-child(#{$i}) .timeline-card {
+          animation-delay: #{0.2 * $i}s;
+        }
       }
     }
   }
@@ -200,23 +191,12 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      height: 100vh;
-      width: 100%;
+      padding: 0px;
+      // height: 100vh;
+      // width: 100%;
       color: colors.$dark-purple;
-      margin-top: 0;
-      margin: 0;
-      padding: 0;
       animation: fade-in 1s ease-in;
-      overflow-y: auto;
-      margin-top: 110px;
-    }
-
-    .timeline {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      // overflow-y: auto;
 
       .timeline-item {
         margin: 30px;
@@ -258,11 +238,11 @@
             }
           }
         }
-      }
 
-      @for $i from 1 through 10 {
-        .timeline-item:nth-child(#{$i}) .timeline-card {
-          animation-delay: #{0.2 * $i}s;
+        @for $i from 1 through 10 {
+          .timeline-item:nth-child(#{$i}) .timeline-card {
+            animation-delay: #{0.2 * $i}s;
+          }
         }
       }
     }

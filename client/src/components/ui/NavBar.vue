@@ -8,7 +8,7 @@
     <div class="side-nav">
       <div class="routes-container">
         <RouterLink v-for="route in routes" :to="{ name: route.name }" :key="route.name" class="icon-container">
-          <i :class="`fa ${route.meta.icon}`"></i>
+          <i :class="`${route.meta.icon}`"></i>
           <span class="icon-label">{{ route.meta.headline }}</span>
         </RouterLink>
       </div>
@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 3;
+    z-index: 9;
 
     .side-nav {
       position: fixed;
@@ -130,8 +130,8 @@
       align-items: center;
       flex-direction: row;
       width: 100%;
-      height: 100px;
-      z-index: 8;
+      height: 80px;
+      z-index: 9;
 
       .side-nav {
         display: flex;
@@ -139,7 +139,7 @@
         justify-content: center;
         width: 100%;
         height: auto;
-        background-color: transparent;
+        background: transparent;
 
         .routes-container {
           display: flex;
@@ -151,6 +151,7 @@
           width: 100%;
           opacity: 0;
           animation: fade-in 0.8s forwards;
+          background: transparent;
 
           a {
             text-decoration: none;
