@@ -179,6 +179,20 @@
     }
 
     @media only screen and (max-width: 768px) {
+      .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        color: colors.$platinum;
+        animation: fade-in 0.8s;
+      }
+      form {
+        width: 100%;
+        padding: 0 10px;
+      }
       label {
         width: 100%;
       }
@@ -189,11 +203,6 @@
 
       textarea {
         width: 100%;
-      }
-
-      form {
-        width: 100%;
-        padding: 0 10px;
       }
     }
   }
